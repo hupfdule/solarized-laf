@@ -1,5 +1,5 @@
-Solarized Colorscheme for Netbeans
-==================================
+Solarized Java Swing Look & Feel
+================================
 Marco Herrn <marco@mherrn.de>
 2018-03-17
 :notoc:
