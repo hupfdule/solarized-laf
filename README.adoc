@@ -1,0 +1,79 @@
+Solarized Colorscheme for Netbeans
+==================================
+Marco Herrn <marco@mherrn.de>
+2018-03-17
+:notoc:
+:homepage: https://github.com/hupfdule/solarized-laf
+:solarized-homepage: http://ethanschoonover.com/solarized
+:solarized-colorscheme-homepage: https://github.com/hupfdule/solarized-netbeans-colorscheme
+:download-page: https://github.com/hupfdule/solarized-laf/releases
+:source-highlighter: prettify
+:version: 1.0.0-SNAPSHOT
+
+Java Swing Look & Feel inspired by the
+{solarized-homepage}[Solarized Colorscheme for Vim].
+
+WARNING: This Look & Feel is still a work in progress and not in a usable
+state yet.
+
+
+Installation
+------------
+
+=== Via Maven
+
+Until the first release version is built, you won't find it in a public
+maven repository. Please use the manual installation instead.
+
+=== Manually
+
+1. Get the current release from the {download-page}[Download page].
+2. Put it into the classpath of your application
+3. Select the Look & Feel:
+   - Either programmatically:
++
+[source,java]
+----
+  try {
+    javax.swing.UIManager.setLookAndFeel(new eu.herrn.solarized.SolarizedLookAndFeel());
+  } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+    ...
+  }
+----
+   - Or via commandline:
++
+----
+java -Dswing.defaultlaf=eu.herrn.solarized.SolarizedLookAndFell MyApp
+----
+
+See https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html[The Java Tutorial]
+for more information about setting a Look & Feel in Swing.
+
+
+Variants
+--------
+
+This Look & Feel currently only supports the light version. It is not an
+exact copy of the original Solarized colorscheme, but uses some derivations.
+
+
+License
+-------
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
