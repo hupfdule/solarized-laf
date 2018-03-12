@@ -136,6 +136,182 @@ public class SolarizedTheme extends MetalTheme {
 
 
   @Override
+  public ColorUIResource getControl() {
+    // used for:
+    //  - panels
+    //  - buttons
+    //  - activated tabs
+    //  - table headers
+    return base2;
+  }
+
+
+  @Override
+  public ColorUIResource getControlDisabled() {
+    // used for:
+    //  - caption of disabled elements
+    return super.getControlDisabled();
+  }
+
+
+  @Override
+  public ColorUIResource getControlTextColor() {
+    // used for:
+    //  - text on controls (but not in trees, lists, but also in tables)
+    return base02;
+  }
+
+
+  @Override
+  public ColorUIResource getControlHighlight() {
+    // used for:
+    //  - shadowed borders (sun on upper left)
+    //  - slider handle
+    return super.getControlHighlight();
+  }
+
+
+  @Override
+  public ColorUIResource getControlInfo() {
+    // used for:
+    //  - Dropdown-Button in ComboBox
+    //  - upper part of Slider component
+    return this.getControlTextColor();
+  }
+
+
+  @Override
+  public ColorUIResource getControlDarkShadow() {
+    // used for:
+    //  - lightened borders (sun on upper left)
+    //  - border around selected menu
+    return base1;
+  }
+
+
+  @Override
+  public ColorUIResource getControlShadow() {
+    // used for:
+    //  - inactive tabs
+    //  - pressed buttons
+    //  - table grid lines
+    //  - separator between menu and main panel
+    //  - border of disabled elements
+    return new ColorUIResource(slightlyDarker(getControl()));
+  }
+
+
+  @Override
+  public ColorUIResource getFocusColor() {
+    // used for:
+    //  - border around text on focused element
+    return base1;
+  }
+
+
+  @Override
+  public ColorUIResource getMenuDisabledForeground() {
+    return this.getControlDisabled();
+  }
+
+
+  @Override
+  public ColorUIResource getMenuSelectedForeground() {
+   return new ColorUIResource(this.getControl().brighter());
+  }
+
+
+  @Override
+  public ColorUIResource getMenuSelectedBackground() {
+    return this.getControlShadow();
+  }
+
+
+  @Override
+  public ColorUIResource getMenuForeground() {
+    return this.getControlTextColor();
+  }
+
+
+  @Override
+  public ColorUIResource getMenuBackground() {
+    return this.getControl();
+  }
+
+
+  @Override
+  public ColorUIResource getHighlightedTextColor() {
+    // used for:
+    //  - hightlighted text in tables, tree, lists, textfields, textareads, but NOT in combo box list!
+    return base2;
+  }
+
+
+  @Override
+  public ColorUIResource getUserTextColor() {
+    // used for:
+    //  - text in textfield, textarea, trees, lists
+    return this.getControlTextColor();
+  }
+
+
+  @Override
+  public ColorUIResource getInactiveControlTextColor() {
+    return base1;
+  }
+
+
+  @Override
+  public ColorUIResource getSystemTextColor() {
+    // used for:
+    //  - normal label text
+    //  FIXME: What about titles?
+    return this.getControlTextColor();
+  }
+
+
+  @Override
+  public ColorUIResource getWindowTitleInactiveForeground() {
+    return base01;
+  }
+
+
+  @Override
+  public ColorUIResource getWindowTitleInactiveBackground() {
+    return this.getControl();
+  }
+
+
+  @Override
+  public ColorUIResource getWindowTitleForeground() {
+    return base3;
+  }
+
+
+  @Override
+  public ColorUIResource getWindowTitleBackground() {
+    return base1;
+  }
+
+
+  @Override
+  public ColorUIResource getPrimaryControlDarkShadow() {
+    return base1;
+  }
+
+
+  @Override
+  public ColorUIResource getPrimaryControlShadow() {
+    return base2;
+  }
+
+
+
+
+
+
+
+  @Override
   public FontUIResource getControlTextFont() {
     return DEFAULT_FONT;
   }
@@ -169,4 +345,13 @@ public class SolarizedTheme extends MetalTheme {
   public FontUIResource getSubTextFont() {
     return DEFAULT_FONT;
   }
+
+
+  public Color slightlyDarker(final Color c) {
+    final float factor= 0.85f;
+        return new Color(Math.max((int)(c.getRed()  *factor), 0),
+                         Math.max((int)(c.getGreen()*factor), 0),
+                         Math.max((int)(c.getBlue() *factor), 0),
+                         c.getAlpha());
+    }
 }
