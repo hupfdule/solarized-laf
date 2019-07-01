@@ -88,6 +88,7 @@ public class SolarizedTheme extends MetalTheme {
     // used for
     //  - base color of folder icons
     //  - lines in Jtree
+    //  - tooltip background
     return base0;
   }
 
@@ -305,6 +306,22 @@ public class SolarizedTheme extends MetalTheme {
     return base2;
   }
 
+
+  @Override
+  public ColorUIResource getPrimaryControlInfo() {
+    // used for:
+    //  - tooltip text
+    return base02;
+  }
+
+
+  @Override
+  public ColorUIResource getPrimaryControl() {
+    // used for:
+    //  - tooltip background
+    //  - icons in trees
+    return new ColorUIResource(slightlyDarker(base3));
+  }
 
 
 
